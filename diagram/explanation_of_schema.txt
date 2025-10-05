@@ -1,0 +1,15 @@
+Branch(branch_id PK, bname, bCity, assets)
+
+Account(account_no PK, branch_id FK, balance)
+
+Loan(loan_no PK, branch_id FK, amount)
+
+Customer(cid PK, cname, c_address, phone, c_saving_accountNo, c_addhar)
+
+Depositor(cid FK, account_no FK) → PK is composite (cid, account_no)
+
+Borrower(cid FK, loan_no FK) → PK is composite (cid, loan_no)
+
+✅ How you can explain this
+
+“This is the relational schema derived from the ER diagram. Each entity is converted into a table with its attributes. Customers, Accounts, Loans, and Branches are the main tables. Since customers can have multiple accounts and loans, we create two relationship tables: Depositor and Borrower, which act as bridges for many-to-many relationships. Every account and loan is linked to a branch through a foreign key. We use primary keys like cid, account_no, loan_no, and branch_id to uniquely identify records, while foreign keys maintain relationships. This ensures data consistency in the database.”

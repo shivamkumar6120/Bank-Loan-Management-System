@@ -1,0 +1,77 @@
+This ER diagram represents the Online Banking Loan System using standard ER notation.
+
+The rectangles are entities: Customer, Account, Loan, and Branch.
+
+The ovals are attributes, describing the properties of each entity.
+
+The diamonds represent relationships, showing how entities are connected.
+
+The lines connect entities with attributes and relationships.
+
+1. Entities and Attributes
+
+Customer
+
+Attributes: cid (customer ID), cname (name), c_address (address), phone, c_saving_account, c_addhar_no.
+
+Meaning: Stores all details of customers who use the banking system.
+
+Account
+
+Attributes: account_no, balance.
+
+Meaning: Represents bank accounts customers hold.
+
+Loan
+
+Attributes: loan_no, amount.
+
+Meaning: Represents loans customers borrow from the bank.
+
+Branch
+
+Attributes: bnum (branch number), bname (branch name), bcity (branch city), assets (branch assets).
+
+Meaning: Represents different branches of the bank.
+
+2. Relationships
+
+Depositor (Customer ↔ Account)
+
+Explains which customer has which account.
+
+Relationship type: Many-to-Many (M:N)
+
+A customer can have multiple accounts, and accounts can be jointly owned by multiple customers.
+
+Borrower (Customer ↔ Loan)
+
+Explains which customer has taken which loan.
+
+Relationship type: Many-to-Many (M:N)
+
+A customer can take multiple loans, and loans can be shared (joint loans).
+
+Account Borrowed (Account ↔ Branch)
+
+Explains which branch maintains an account.
+
+Relationship type: Many-to-One (N:1)
+
+Each account belongs to one branch, but a branch can have many accounts.
+
+Loan Branch (Loan ↔ Branch)
+
+Explains which branch issued a loan.
+
+Relationship type: Many-to-One (N:1)
+
+Each loan belongs to one branch, but a branch can issue many loans.
+
+3. Overall Flow
+
+In this system, a Customer can open one or more Accounts and can also take one or more Loans. Each Account and each Loan is always linked to a specific Branch of the bank. The relationships Depositor and Borrower connect customers to their accounts and loans, while Account Borrowed and Loan Branch connect accounts and loans to the respective branch.
+
+✅ How to Present it in Simple Words
+
+“This ER diagram models an online banking loan system. The entities are Customer, Account, Loan, and Branch, each with their own attributes. Customers deposit into accounts and can also borrow loans. Both accounts and loans are linked to branches. The relationships show that a customer can have multiple accounts or loans, and branches can handle many accounts and loans. This captures how customers, accounts, loans, and branches interact in a real banking environment.
