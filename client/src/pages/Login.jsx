@@ -2,6 +2,66 @@ import React from 'react'
 
 export const Login = () => {
   return (
-    <div>Login</div>
+    <div className='flex '>
+        <div className='min-w-1/2 bg-gradient-to-bl to-teal-500 from-blue-500 min-h-screen flex'>
+                
+        </div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-50 p-6">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-10 border border-gray-100">
+        {/* Heading */}
+        <h2 className="text-2xl font-semibold text-gray-800">Welcome back</h2>
+        <p className="text-gray-500 mt-1 mb-8">
+          Sign in to your account to continue
+        </p>
+
+        {/* Email */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-600 mb-1">
+            Email address
+          </label>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-400 focus:outline-none"
+          />
+        </div>
+
+        {/* Password */}
+        <div className="mb-6">
+          <div className="flex justify-between">
+            <label className="text-sm font-medium text-gray-600">
+              Password
+            </label>
+            <button className="text-sm text-blue-600 hover:underline">
+              Forgot password?
+            </button>
+          </div>
+
+          <input
+            type="password"
+            placeholder="••••••••"
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-teal-400 focus:outline-none"
+          />
+        </div>
+
+        {/* Sign in button */}
+        <button className="w-full py-2 bg-gradient-to-r to-teal-500 from-blue-500 text-white rounded-lg font-medium hover:opacity-90 transition">
+          Sign in
+        </button>
+
+        {/* Signup link */}
+        <p className="text-center text-sm text-gray-600 mt-6">
+          Don't have an account?{" "}
+          <span className="text-blue-600 font-medium hover:underline cursor-pointer">
+            Sign up
+          </span>
+        </p>
+
+        <p className="text-center text-xs text-gray-400 mt-6">
+          Secured with bank-level encryption
+        </p>
+      </div>
+    </div>
+    </div>
   )
 }
