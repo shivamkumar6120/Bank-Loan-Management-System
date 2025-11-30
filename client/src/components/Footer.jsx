@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-200 mt-6 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-black text-gray-200  border-t border-gray-200">
+      <div className=" max-w-7xl mx-auto px-6 py-12 grid gap-8 grid-cols-1 md:grid-cols-5">
 
         {/* Brand Info */}
         <div>
@@ -44,6 +44,14 @@ const Footer = () => {
           <p className="text-sm mt-1">📞 +91 98765 43210</p>
         </div>
 
+        {/* Developers */}
+        <div>
+          <h3 className="font-semibold text-gray-100 mb-3">Developers</h3>
+          <p className="text-sm">Shivam Kashyap </p>
+          <p className="text-sm">Jaydeep Dixit </p>
+          <p className="text-sm">Shivam Kumar Sah</p>
+          <p className="text-sm">Devan Pujari</p>
+        </div>
       </div>
 
       {/* Bottom Bar */}
