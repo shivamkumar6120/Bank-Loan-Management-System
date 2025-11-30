@@ -2,7 +2,7 @@ import React from "react";
 
 const features = [
   { title: "Instant Approvals", desc: "Get your loan approved in minutes with our streamlined process", icon: "⏱" },
-  { title: "Bank-Level Security", desc: "Your data is protected with advanced encryption technology . Created by DCA students", icon: "🛡" },
+  { title: "Bank-Level Security", desc: "Your data is protected with advanced encryption technology . Created by DCA students ", icon: "🛡" },
   { title: "Competitive Rates", desc: "Access the most competitive interest rates in the market", icon: "📈" },
   { title: "24/7 Support", desc: "Our dedicated team is always here to help you", icon: "🎧" },
   { title: "Easy Documentation", desc: "Simple paperwork with digital document submission", icon: "📝" },
