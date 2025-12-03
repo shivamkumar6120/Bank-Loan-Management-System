@@ -11,7 +11,7 @@ const Footer = () => {
           <h2 className="text-xl font-bold text-teal-600">CDAC LOAN PROJECT</h2>
           <p className="text-sm mt-3">
             Empowering your financial goals with secure and
-            affordable lending solutions. 
+            affordable lending solutions.
           </p>
         </div>
 
@@ -21,7 +21,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-teal-600">Home</Link></li>
             <li><Link to="/login" className="hover:text-teal-600">Sign In</Link></li>
-            <li><Link to="/about" className="hover:text-teal-600">About-us</Link></li>
+            <li> <Link to="/about" className="hover:text-teal-600">About Us</Link></li>
             <li><Link to="/register" className="hover:text-teal-600">Register</Link></li>
           </ul>
         </div>
