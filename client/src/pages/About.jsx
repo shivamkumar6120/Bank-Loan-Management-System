@@ -10,7 +10,7 @@ export default function About() {
         <p className="lead opacity-75">Your Trusted Partner in Financial Growth</p>
         
         <Link to="/" className="btn btn-outline-light rounded-pill mt-3 px-4">
-          ← Back to Home
+          <button>Home</button>
         </Link>
       </section>
 
