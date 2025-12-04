@@ -5,16 +5,16 @@ export default function ContactUs() {
     <div className="bg-gray-50 min-h-screen pb-16">
       
       {/* Back Button + Heading */}
-      <div className="max-w-6xl mx-auto px-6 pt-8 bg-blue-200 ">
+      <div className="max-w-6xl mx-auto  bg-blue-200 flex flex-col items-center justify-center">
         <Link
           to="/"
-          className="text-sm text-grey-300 hover:underline flex items-center mb-5">
+          className="text-sm text-grey-300 hover:underline flex items-center mb-5 self-start">
           Back to Home
         </Link>
-        <h2 className="text-5xl font-bold text-gray-900 text-center mb-3">
+        <h2 className="text-5xl font-bold text-gray-900 text-center mb-3 text-center">
           Get In Touch
         </h2>
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-3">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-5">
           Have questions? We'd love to hear from you.
         </h2>
       </div>
