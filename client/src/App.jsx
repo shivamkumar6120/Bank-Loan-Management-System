@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import About  from "./pages/About"
+import Contactus from './pages/Contactus';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/about" element = {<About/>}/>
+        <Route path="/contact" element={<Contactus/>}/>
       </Routes>
 
       <ToastContainer />
