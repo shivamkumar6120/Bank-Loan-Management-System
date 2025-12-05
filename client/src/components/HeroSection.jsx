@@ -40,7 +40,7 @@ const HeroSection = () => {
         <div className="mt-8 flex gap-4">
           {/* Apply Now → Signup */}
           <Link
-            to="/register"
+            to="/login"
             className="bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg font-medium shadow hover:opacity-90 transition inline-block"
           >
             Apply Now
