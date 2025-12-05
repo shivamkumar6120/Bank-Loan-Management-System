@@ -15,6 +15,7 @@ export const Login = () => {
         setUser((prevUser)=>({...prevUser,password:e.target.value}))
     }
     async function loginHandler(){
+        console.log(user)
         navigate("/dashboard");
     }
   return (
