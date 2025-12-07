@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import { EmiProvider } from "./context/EmiContext";
 import EmiPayments from './pages/EmiPayments';
 import { NotificationProvider } from "./context/NotificationContext";
+import Notifications from "./pages/Notifications";
 function App() {
   return (
     <div>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/apply-loan" element={<ApplyLoan/>}/>
         <Route path="/products" element={<Products/>}/>
         <Route path="/dashboard/emi-payments" element={<EmiPayments/>}/>
+        <Route path="/dashboard/notification" element={<Notifications/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
