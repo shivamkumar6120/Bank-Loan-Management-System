@@ -7,6 +7,12 @@ import { useLoan } from "../context/LoanContext";
 export default function ApplyLoan() {
     const [step, setStep] = useState(1);
 
+    //Loan Form Data States (Dashboard will use these values)
+    const [loanType, setLoanType] = useState("");
+    const [loanAmount, setLoanAmount] = useState("");
+    const [loanTerm, setLoanTerm] = useState("");
+    const [loanPurpose, setLoanPurpose] = useState("");
+
     const totalSteps = 4;
 
     const handleNext = () => step < totalSteps && setStep(step + 1);
@@ -145,14 +151,18 @@ export default function ApplyLoan() {
 
                 {step === 3 && (
                     <>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                            Loan Details
-                        </h3>
+                       <h3 className="text-xl font-semibold text-gray-900 mb-6">Loan Details</h3>
 
                         <div className="mb-6">
                             <label className="text-sm font-medium">Loan Type</label>
-                            <select className="w-full mt-1 border rounded-lg p-3 bg-gray-50">
-                                <option>Select loan type</option>
+                            {/* Making input controlled */}
+
+                            <select
+                                className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                                value={loanType}
+                                onChange={(e) => setLoanType(e.target.value)}
+                            >
+                                <option value="">Select loan type</option>
                                 <option>Home Loan</option>
                                 <option>Personal Loan</option>
                                 <option>Education Loan</option>
@@ -163,26 +173,35 @@ export default function ApplyLoan() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="text-sm font-medium">Loan Amount</label>
+                                {/* Making input controlled */}
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
                                     placeholder="10000"
+                                    value={loanAmount}
+                                    onChange={(e) => setLoanAmount(e.target.value)}
                                 />
                             </div>
 
                             <div>
                                 <label className="text-sm font-medium">Loan Term (months)</label>
+                                {/* Making input controlled */}
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
                                     placeholder="24"
+                                    value={loanTerm}
+                                    onChange={(e) => setLoanTerm(e.target.value)}
                                 />
                             </div>
                         </div>
 
                         <div className="mt-6">
                             <label className="text-sm font-medium">Loan Purpose</label>
+                                {/* Making input controlled */}
                             <input
                                 className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
                                 placeholder="Home improvement"
+                                value={loanPurpose}
+                                onChange={(e) => setLoanPurpose(e.target.value)}
                             />
                         </div>
                     </>
@@ -236,15 +255,24 @@ export default function ApplyLoan() {
                         <button
                             className="px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800"
                             onClick={() => {
-                                // 🔥 Added: new loan submission logic
+                                //  Validate all required fields
+                                if (!loanType || !loanAmount || !loanTerm || !loanPurpose) {
+                                    return toast.error("Please fill all loan details.");
+                                }
+
+                                // Sending dynamic data to dashboard
                                 const newLoan = {
-                                    id: Math.floor(Math.random() * 900 + 100),
-                                    type: "Personal Loan",
-                                    amount: "₹50,000",
+                                    id: Math.floor(Math.random() * 9000 + 1000),
+                                    type: loanType,
+                                    amount: `₹${loanAmount}`,
                                     status: "Pending",
+                                    purpose: loanPurpose,
+                                    term: loanTerm,
                                 };
+
                                 addLoan(newLoan);
-                                toast.success("Loan application submitted! Pending review.");
+                                toast.success("Loan submitted successfully!");
+
                                 setTimeout(() => navigate("/dashboard"), 1000);
                             }}
                         >
