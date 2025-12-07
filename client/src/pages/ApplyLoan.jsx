@@ -139,51 +139,74 @@ export default function ApplyLoan() {
                 {/* ================= STEP 3 — LOAN DETAILS ================= */}
 
                 {step === 3 && (
-          <>
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">
-              Loan Details
-            </h3>
+                    <>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                            Loan Details
+                        </h3>
 
-            <div className="mb-6">
-              <label className="text-sm font-medium">Loan Type</label>
-              <select className="w-full mt-1 border rounded-lg p-3 bg-gray-50">
-                <option>Select loan type</option>
-                <option>Home Loan</option>
-                <option>Personal Loan</option>
-                <option>Education Loan</option>
-                <option>Car Loan</option>
-              </select>
-            </div>
+                        <div className="mb-6">
+                            <label className="text-sm font-medium">Loan Type</label>
+                            <select className="w-full mt-1 border rounded-lg p-3 bg-gray-50">
+                                <option>Select loan type</option>
+                                <option>Home Loan</option>
+                                <option>Personal Loan</option>
+                                <option>Education Loan</option>
+                                <option>Car Loan</option>
+                            </select>
+                        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="text-sm font-medium">Loan Amount</label>
-                <input
-                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                  placeholder="10000"
-                />
-              </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="text-sm font-medium">Loan Amount</label>
+                                <input
+                                    className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                                    placeholder="10000"
+                                />
+                            </div>
 
-              <div>
-                <label className="text-sm font-medium">Loan Term (months)</label>
-                <input
-                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                  placeholder="24"
-                />
-              </div>
-            </div>
+                            <div>
+                                <label className="text-sm font-medium">Loan Term (months)</label>
+                                <input
+                                    className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                                    placeholder="24"
+                                />
+                            </div>
+                        </div>
 
-            <div className="mt-6">
-              <label className="text-sm font-medium">Loan Purpose</label>
-              <input
-                className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                placeholder="Home improvement"
-              />
-            </div>
-          </>
-        )}
+                        <div className="mt-6">
+                            <label className="text-sm font-medium">Loan Purpose</label>
+                            <input
+                                className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                                placeholder="Home improvement"
+                            />
+                        </div>
+                    </>
+                )}
 
                 {/* ================= STEP 4 — DOCUMENTS ================= */}
+                {step === 4 && (
+                    <>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                            Documents & Review
+                        </h3>
+
+                        <div className="mb-6">
+                            <label className="text-sm font-medium">ID Document</label>
+                            <input type="file" className="w-full mt-1 p-3 border rounded-lg" />
+                        </div>
+
+                        <div className="mb-6">
+                            <label className="text-sm font-medium">Proof of Income</label>
+                            <input type="file" className="w-full mt-1 p-3 border rounded-lg" />
+                        </div>
+
+                        <div className="bg-blue-50 p-4 rounded-lg text-gray-700 text-sm">
+                            <strong>Review your application</strong>
+                            <p>Please check everything before submitting.</p>
+                        </div>
+                    </>
+                )}
+
 
                 {/* ================= BUTTONS ================= */}
                 <div className="flex justify-between mt-10">
