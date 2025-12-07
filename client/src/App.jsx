@@ -24,7 +24,7 @@ function App() {
         <Route path="/apply-loan" element={<ApplyLoan/>}/>
       </Routes>
 
-      <ToastContainer />
+      <ToastContainer position="top-left" autoClose={3000}  />
     </div>
   );
 }
