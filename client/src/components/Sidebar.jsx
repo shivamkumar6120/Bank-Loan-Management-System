@@ -13,7 +13,7 @@ export default function Sidebar() {
     { icon: <CreditCard size={20} />, label: "My Loans", link: "/dashboard" },
     { icon: <Wallet size={20} />, label: "EMI Payments", link: "/dashboard/emi-payments" }, 
     { icon: <Bell size={20} />, label: "Notifications", link: "/notification" },
-    { icon: <User size={20} />, label: "Profile & KYC", link: "#" },
+    { icon: <User size={20} />, label: "Profile & KYC", link: "/profile-kyc" },
   ];
 
   return (
