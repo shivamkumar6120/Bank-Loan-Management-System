@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { Home, CreditCard, Bell, User, LogOut, Wallet } from "lucide-react";
 import ApplyLoan from './../pages/ApplyLoan';
+import { useLocation } from "react-router-dom";
 
 export default function Sidebar() {
+
+  const location = useLocation(); 
+
   const menuItems = [
     { icon: <Home size={20} />, label: "Dashboard", link: "/dashboard" },
     { icon: <Home size={20} />, label: "Apply Loan", link: "/apply-loan" },
     { icon: <CreditCard size={20} />, label: "My Loans", link: "/dashboard" },
-    { icon: <Wallet size={20} />, label: "EMI Payments", link: "#" },
+    { icon: <Wallet size={20} />, label: "EMI Payments", link: "emi-payments" }, // link to be added >>>?
     { icon: <Bell size={20} />, label: "Notifications", link: "#" },
     { icon: <User size={20} />, label: "Profile & KYC", link: "#" },
   ];
