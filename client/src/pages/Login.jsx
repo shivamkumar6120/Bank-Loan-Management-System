@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { CgWebsite } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+    const [user,setUser] = useState({email:"",
+        password:""
+    });
+    const navigate = useNavigate();
+
+    function emailHandler(e){
+        setUser((prevUser)=>({...prevUser,email:e.target.value}))
+    }
+     function passwordHandler(e){
+        setUser((prevUser)=>({...prevUser,password:e.target.value}))
+    }
+    async function loginHandler(){
+        console.log(user)
+        navigate("/dashboard");
+    }
   return (
     <div className="flex min-w-[100vw]">
       <div className="w-[40%] bg-gradient-to-br to-teal-500 from-blue-500 min-h-screen flex items-center justify-center flex-col">
@@ -9,13 +25,15 @@ export const Login = () => {
                 <CgWebsite size={"70px"} color="white"/>
                 <p className="text-white font-semibold text-[3.5rem]">Loan Ease</p>
             </div>
-            <p>Your trusted partner in loan management.</p>
-            <p>Secure,fast and reliable financial solutions.</p>
-            <ul>
-                <li>Instant loan approval</li>
-                <li>Secure transactions</li>
-                <li>24/7 customer support</li>
-            </ul>
+            <div className="text-white">
+                <p>Your trusted partner in loan management.</p>
+                <p>Secure,fast and reliable financial solutions.</p>
+                <ul className="list-disc">
+                    <li>Instant loan approval</li>
+                    <li>Secure transactions</li>
+                    <li>24/7 customer support</li>
+                </ul>
+            </div>
 
       </div>
       <div className="w-[60%] flex items-center justify-center min-h-screen bg-gray-50 p-6">
@@ -35,6 +53,7 @@ export const Login = () => {
               type="email"
               placeholder="you@example.com"
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              onChange={emailHandler}
             />
           </div>
 
@@ -53,11 +72,12 @@ export const Login = () => {
               type="password"
               placeholder="••••••••"
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              onChange={passwordHandler}
             />
           </div>
 
           {/* Sign in button */}
-          <button className="w-full py-2 bg-gradient-to-r to-teal-500 from-blue-500 text-white rounded-lg font-medium hover:opacity-90 transition">
+          <button className="w-full py-2 bg-gradient-to-r to-teal-500 from-blue-500 text-white rounded-lg font-medium hover:opacity-90 transition" onClick={loginHandler}>
             Sign in
           </button>
 
