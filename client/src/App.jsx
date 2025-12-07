@@ -15,6 +15,7 @@ import { NotificationProvider } from "./context/NotificationContext";
 import Notifications from "./pages/Notifications";
 import ProfileKYC from "./pages/ProfileKYC";
 import MyLoans from "./pages/MyLoans";
+import LoanDetails from "./pages/LoanDetails";
 function App() {
   return (
     <div>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/notification" element={<Notifications/>}/>
         <Route path="/profile-kyc" element={<ProfileKYC/>}/>
         <Route path="/my-loans" element={<MyLoans/>}/>
+        <Route path="/loan/:loanId" element={<LoanDetails/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
