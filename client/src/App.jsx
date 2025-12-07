@@ -14,6 +14,7 @@ import EmiPayments from './pages/EmiPayments';
 import { NotificationProvider } from "./context/NotificationContext";
 import Notifications from "./pages/Notifications";
 import ProfileKYC from "./pages/ProfileKYC";
+import MyLoans from "./pages/MyLoans";
 function App() {
   return (
     <div>
@@ -35,6 +36,7 @@ function App() {
         <Route path="/emi-payments" element={<EmiPayments/>}/>
         <Route path="/notification" element={<Notifications/>}/>
         <Route path="/profile-kyc" element={<ProfileKYC/>}/>
+        <Route path="/my-loans" element={<MyLoans/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
