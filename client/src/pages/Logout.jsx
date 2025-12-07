@@ -19,8 +19,10 @@ export default function Logout() {
       {/* Header */}
       <header className="flex justify-between items-center mb-10">
         <h2 className="text-2xl font-bold text-[#0A4D68]">
-          <button>CDAC LOAN BANK
-          </button>
+          <Link to="/" className="hover:underline">
+  CDAC LOAN BANK
+</Link>
+
         </h2>
 
         <div className="space-x-4">
