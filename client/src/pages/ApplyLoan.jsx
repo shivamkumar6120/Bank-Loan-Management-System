@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useLoan } from "../context/LoanContext";
 
 
 export default function ApplyLoan() {
@@ -10,6 +11,9 @@ export default function ApplyLoan() {
 
     const handleNext = () => step < totalSteps && setStep(step + 1);
     const handlePrev = () => step > 1 && setStep(step - 1);
+
+    const { addLoan } = useLoan();
+    const navigate = useNavigate();
 
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-4">
@@ -231,7 +235,18 @@ export default function ApplyLoan() {
                     ) : (
                         <button
                             className="px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800"
-                            onClick={() => toast.success("Application submitted successfully! We'll review it within 24 hours.")}
+                            onClick={() => {
+                                // 🔥 Added: new loan submission logic
+                                const newLoan = {
+                                    id: Math.floor(Math.random() * 900 + 100),
+                                    type: "Personal Loan",
+                                    amount: "₹50,000",
+                                    status: "Pending",
+                                };
+                                addLoan(newLoan);
+                                toast.success("Loan application submitted! Pending review.");
+                                setTimeout(() => navigate("/dashboard"), 1000);
+                            }}
                         >
                             Submit Application
                         </button>
