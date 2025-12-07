@@ -19,7 +19,7 @@ export default function ApplyLoan() {
           to="/dashboard"
           className="text-gray-600 flex items-center gap-1 mb-4 hover:text-gray-900"
         >
-          ← Back to Home
+          ← Back to Dashboard
         </Link>
 
         {/* Title */}
@@ -40,6 +40,58 @@ export default function ApplyLoan() {
           ))}
         </div>
 
+{/* ================= STEP 1 — PERSONAL INFO ================= */}
+
+        {step === 1 && (
+          <>
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              Personal Information
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="text-sm font-medium">First Name</label>
+                <input
+                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                  placeholder="John"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Last Name</label>
+                <input
+                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                  placeholder="Doe"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Email</label>
+                <input
+                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Phone Number</label>
+                <input
+                  className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                  placeholder="+1 234 567 8900"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <label className="text-sm font-medium">Address</label>
+              <input
+                className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
+                placeholder="123 Main St, City, State"
+              />
+            </div>
+          </>
+        )}
+
         {/* ================= BUTTONS ================= */}
         <div className="flex justify-between mt-10">
           <button
@@ -49,6 +101,8 @@ export default function ApplyLoan() {
           >
             ← Previous
           </button>
+
+
 
           {step < totalSteps ? (
             <button
@@ -66,6 +120,10 @@ export default function ApplyLoan() {
             </button>
           )}
         </div>
+
+         
+
+
       </div>
     </div>
   );
