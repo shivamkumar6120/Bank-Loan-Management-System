@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Sidebar from "../components/Sidebar";
 import { useLoan } from "../context/LoanContext";
+import { useNotification } from "../context/NotificationContext";
+
 
 export default function ApplyLoan() {
   const [step, setStep] = useState(1);
@@ -19,6 +21,9 @@ export default function ApplyLoan() {
   const [idProof, setIdProof] = useState(null);
   const [incomeProof, setIncomeProof] = useState(null);
   const [extraDoc, setExtraDoc] = useState(null);
+
+
+const { addNotification } = useNotification();
 
 
   const handleNext = () => {
@@ -238,13 +243,29 @@ export default function ApplyLoan() {
                   onClick={() => {
                     if (!loanType || !loanAmount || !loanTerm || !loanPurpose)
                       return toast.error("Fill all loan details!");
+                    
+                    
+                     const loanObj = {
+                          id: Math.floor(Math.random() * 9000 + 1000),
+                          type: loanType,
+                          amount: `₹${loanAmount}`,
+                          term: loanTerm,
+                          status: "Pending",
+                          purpose: loanPurpose,
+                          documents: {
+                            idProof,
+                            incomeProof,
+                            extraDoc,
+                          }
+                        };
 
-                    addLoan({
-                      id: Math.floor(Math.random() * 9000 + 1000),
-                      type: loanType,
-                      amount: `₹${loanAmount}`,
-                      status: "Pending",
-                    });
+                        addLoan(loanObj);
+                    // New Notification feature
+                    addNotification (
+                      `New loan request submitted (${loanObj.type})`,
+                      "loan",
+                      loanObj.id
+                    )
 
                     toast.success("Loan submitted successfully!");
                     setTimeout(() => navigate("/dashboard"), 1000);
