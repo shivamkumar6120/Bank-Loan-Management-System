@@ -7,10 +7,12 @@ import About  from "./pages/About"
 import Contactus from './pages/Contactus';
 import UserDashboard from "./pages/UserDashboard";
 import ApplyLoan from "./pages/ApplyLoan";
+import { LoanProvider } from "./context/LoanContext";
 
 function App() {
   return (
     <div>
+      <LoanProvider>
       <Routes>
         {/* Home Page as default landing page */}
         <Route path="/" element={<Home />} />
@@ -25,6 +27,7 @@ function App() {
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
+      </LoanProvider>
     </div>
   );
 }
