@@ -9,50 +9,50 @@ function Products() {
   const products = [
     {
       icon: <FaUser className="text-3xl text-blue-700" />,
-      title: "Personal Loans",
-      desc: "Quick and flexible financing for any personal need",
+      title: "Personal Loan",
+      desc: "Get quick and flexible financing for your personal needs.",
       points: [
-        "Loan amounts from $1,000 to $50,000",
-        "Fixed interest rates as low as 5.99% APR",
-        "Terms from 12 to 60 months",
-        "No prepayment penalties",
-        "Same-day approval available",
+        "Loan amounts from ₹50,000 to ₹25,00,000",
+        "Interest rates starting from 10.99% p.a.",
+        "Tenure from 12 to 60 months",
+        "No prepayment charges",
+        "Instant approval available",
       ],
     },
     {
       icon: <FaHome className="text-3xl text-blue-700" />,
-      title: "Home Mortgages",
-      desc: "Make your dream home a reality with our competitive rates",
+      title: "Home Loan",
+      desc: "Make your dream home a reality with affordable interest rates.",
       points: [
-        "Financing up to $1,000,000",
-        "Fixed and adjustable rate options",
-        "Terms from 15 to 30 years",
-        "Low down payment options",
-        "First-time buyer programs",
+        "Financing from ₹5 lakh to ₹5 crore",
+        "Both fixed and floating rate options",
+        "Loan tenure up to 30 years",
+        "Low down payment requirements",
+        "Special benefits for first-time buyers",
       ],
     },
     {
       icon: <FaBriefcase className="text-3xl text-blue-700" />,
-      title: "Business Loans",
-      desc: "Fuel your business growth with tailored financing solutions",
+      title: "Business Loan",
+      desc: "Power your business growth with easy and reliable funding.",
       points: [
-        "Loan amounts from $10,000 to $500,000",
-        "Competitive rates for qualified businesses",
-        "Terms from 12 to 84 months",
-        "Fast-approval process",
-        "Dedicated business advisor",
+        "Loan amounts from ₹1 lakh to ₹50 lakh",
+        "Attractive interest rates for eligible applicants",
+        "Loan tenure ranging from 12 to 84 months",
+        "Fast approval with minimal documentation",
+        "Dedicated business loan support",
       ],
     },
     {
       icon: <FaCar className="text-3xl text-blue-700" />,
-      title: "Auto Loans",
-      desc: "Drive away in your dream car with affordable financing",
+      title: "Car Loan",
+      desc: "Drive home your dream vehicle with convenient EMIs.",
       points: [
-        "New and used vehicle financing",
-        "Rates as low as 3.99% APR",
-        "Terms from 24 to 72 months",
-        "Pre-approval available",
-        "Refinancing options",
+        "Financing available for new and used cars",
+        "Interest rates starting from 8.75% p.a.",
+        "Loan tenure from 24 to 84 months",
+        "Pre-approval facility available",
+        "Refinancing options also provided",
       ],
     },
   ];
@@ -76,7 +76,7 @@ function Products() {
       </h1>
 
       <p className="text-center text-gray-500 mt-2 mb-10 text-lg">
-        Explore our range of flexible loan products designed to meet your financial needs.
+        Explore loan options designed to support your financial goals.
       </p>
 
       {/* Card Grid */}
@@ -85,7 +85,7 @@ function Products() {
         {products.map((item, index) => (
           <div 
             key={index}
-            className="bg-white shadow rounded-xl p-6 border border-gray-200"
+            className="bg-white shadow rounded-xl p-6 border border-gray-200 hover:shadow-lg transition"
           >
             <div className="flex items-center gap-4">
               {item.icon}
@@ -102,11 +102,19 @@ function Products() {
               ))}
             </ul>
 
+            {/* Modern Equal Buttons */}
             <div className="flex gap-4 mt-6">
-              <Link to='/login' className="bg-blue-900 text-white px-5 py-2 rounded-lg hover:bg-blue-800">
+              <Link 
+                to='/login' 
+                className="flex-1 text-center bg-blue-900 text-white py-2 rounded-lg hover:bg-blue-800 transition"
+              >
                 Apply Now
               </Link>
-              <Link to="/" className="border border-gray-400 px-5 py-2 rounded-lg hover:bg-gray-100">
+
+              <Link 
+                to="/" 
+                className="flex-1 text-center border border-gray-400 py-2 rounded-lg hover:bg-gray-100 transition"
+              >
                 Calculate
               </Link>
             </div>
@@ -115,15 +123,18 @@ function Products() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-4xl mx-auto bg-white border border-gray-300 shadow mt-12 p-8 rounded-xl text-center">
+      <div className="max-w-4xl mx-auto bg-white border border-gray-300 shadow mt-12 p-8 rounded-xl text-center hover:shadow-lg transition">
         <h2 className="text-xl font-semibold text-gray-800">
-          Not Sure Which Loan is Right for You?
+          Not sure which loan is right for you?
         </h2>
         <p className="text-gray-600 mt-2">
-          Our specialists are here to help you choose the perfect financing solution.
+          Our experts can help you choose the perfect loan for your needs.
         </p>
 
-        <Link to="/contact" className="mt-6 bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800">
+        <Link 
+          to="/contact" 
+          className="inline-block mt-6 bg-blue-900 text-white px-8 py-2 rounded-lg hover:bg-blue-800 transition"
+        >
           Contact Us
         </Link>
       </div>
