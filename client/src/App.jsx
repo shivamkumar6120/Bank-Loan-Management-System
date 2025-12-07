@@ -32,7 +32,7 @@ function App() {
         <Route path="/apply-loan" element={<ApplyLoan/>}/>
         <Route path="/products" element={<Products/>}/>
         <Route path="/dashboard/emi-payments" element={<EmiPayments/>}/>
-        <Route path="/dashboard/notification" element={<Notifications/>}/>
+        <Route path="/notification" element={<Notifications/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
