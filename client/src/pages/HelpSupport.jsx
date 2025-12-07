@@ -2,12 +2,16 @@ import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { useSupport } from "../context/SupportContext";
 import { toast } from "react-toastify";
+import { useNotification } from "../context/NotificationContext";
+
 
 export default function HelpSupport() {
   const { tickets, addTicket } = useSupport();
   const [category, setCategory] = useState("");
   const [subject, setSubject] = useState("");
   const [description, setDescription] = useState("");
+  const { addNotification } = useNotification();
+
 
   const faqList = [
     {
@@ -37,22 +41,33 @@ export default function HelpSupport() {
   ];
 
   const handleSubmit = () => {
-    if (!category || !subject || !description)
-      return toast.error("All fields are required!");
+  if (!category || !subject || !description)
+    return toast.error("All fields are required!");
 
-    const newTicket = {
-      id: "SUP-" + Math.floor(Math.random() * 9000 + 1000),
-      subject,
-      status: "In Progress",
-      updated: "Just now",
-    };
-
-    addTicket(newTicket);
-    toast.success("Support ticket submitted!");
-    setCategory("");
-    setSubject("");
-    setDescription("");
+  const newTicket = {
+    id: "SUP-" + Math.floor(Math.random() * 9000 + 1000),
+    subject,
+    status: "In Progress",
+    updated: "Just now",
   };
+
+  addTicket(newTicket);
+
+  //  SEND NOTIFICATION
+  addNotification(
+    `Support ticket created: ${newTicket.subject}`,
+    "support",
+    newTicket.id
+  );
+
+  toast.success("Support ticket submitted!");
+
+  // Reset form
+  setCategory("");
+  setSubject("");
+  setDescription("");
+};
+
 
   return (
     <div className="flex min-h-screen bg-gray-100">
