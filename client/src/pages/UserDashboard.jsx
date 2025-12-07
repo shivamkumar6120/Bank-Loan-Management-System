@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useLoan } from "../context/LoanContext";
 
 export default function UserDashboard() {
   const [username, setUsername] = useState("User"); // dynamically replace later
 
-  // sample loan data (replace with API or backend later)
-  const loanData = [
-    { id: 101, type: "Home Loan", amount: "₹10,00,000", status: "Approved" },
-    { id: 102, type: "Education Loan", amount: "₹4,00,000", status: "Pending" },
-    { id: 103, type: "Personal Loan", amount: "₹1,50,000", status: "Rejected" }
-  ];
+  // sample loan data (replace with API or backend later) { For now taking details from apply-loan from }
+ const { loanData } = useLoan();
 
   // quick stats
   const total = loanData.length;
