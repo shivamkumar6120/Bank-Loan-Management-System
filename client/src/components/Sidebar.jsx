@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Home, CreditCard, Bell, User, LogOut, Wallet } from "lucide-react";
 import ApplyLoan from './../pages/ApplyLoan';
 import { useLocation } from "react-router-dom";
+import { HelpCircle } from "lucide-react";
+
 
 export default function Sidebar() {
 
@@ -14,6 +16,7 @@ export default function Sidebar() {
     { icon: <Wallet size={20} />, label: "EMI Payments", link: "/emi-payments" }, 
     { icon: <Bell size={20} />, label: "Notifications", link: "/notification" },
     { icon: <User size={20} />, label: "Profile & KYC", link: "/profile-kyc" },
+    { icon: <HelpCircle size={20} />, label: "Help / Support", link: "/support" },
   ];
 
   return (
