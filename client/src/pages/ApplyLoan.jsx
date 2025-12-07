@@ -63,7 +63,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">First Name</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="John"
+                                    placeholder="Shivam"
                                 />
                             </div>
 
@@ -71,7 +71,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">Last Name</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="Doe"
+                                    placeholder="Kumar"
                                 />
                             </div>
 
@@ -79,7 +79,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">Email</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="john@example.com"
+                                    placeholder="shivamkumar@gmail.com"
                                 />
                             </div>
 
@@ -87,7 +87,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">Phone Number</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="+1 234 567 8900"
+                                    placeholder="+91 62041 04612"
                                 />
                             </div>
                         </div>
@@ -96,7 +96,7 @@ export default function ApplyLoan() {
                             <label className="text-sm font-medium">Address</label>
                             <input
                                 className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                placeholder="123 Main St, City, State"
+                                placeholder="Bailey road, patna 800001"
                             />
                         </div>
                     </>
@@ -114,7 +114,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">Employer Name</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="ABC Company"
+                                    placeholder="CDAC company"
                                 />
                             </div>
 
@@ -132,7 +132,7 @@ export default function ApplyLoan() {
                                 <label className="text-sm font-medium">Monthly Income</label>
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="5000"
+                                    placeholder="500000"
                                 />
                             </div>
 
@@ -187,7 +187,7 @@ export default function ApplyLoan() {
                                 {/* Making input controlled */}
                                 <input
                                     className="w-full mt-1 border rounded-lg p-3 bg-gray-50"
-                                    placeholder="24"
+                                    placeholder="36"
                                     value={loanTerm}
                                     onChange={(e) => setLoanTerm(e.target.value)}
                                 />
