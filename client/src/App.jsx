@@ -8,7 +8,7 @@ import Contactus from './pages/Contactus';
 import UserDashboard from "./pages/UserDashboard";
 import ApplyLoan from "./pages/ApplyLoan";
 import { LoanProvider } from "./context/LoanContext";
-
+import Products from "./pages/Products";
 function App() {
   return (
     <div>
@@ -24,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contactus/>}/>
         <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/apply-loan" element={<ApplyLoan/>}/>
+        <Route path="/products" element={<Products/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />

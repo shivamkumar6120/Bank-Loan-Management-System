@@ -33,6 +33,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li className="hover:text-teal-600 cursor-pointer">Apply for Loan</li>
             <li className="hover:text-teal-600 cursor-pointer">EMI Calculator</li>
+             <li><Link to="/products" className="hover:text-teal-600 cursor-pointer">Product</Link></li>
             <li className="hover:text-teal-600 cursor-pointer">Customer Support</li>
           </ul>
         </div>
