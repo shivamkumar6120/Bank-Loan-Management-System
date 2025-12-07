@@ -1,9 +1,14 @@
 import Sidebar from "../components/Sidebar";
 import { useLoan } from "../context/LoanContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function MyLoans() {
   const { loanData } = useLoan();
+
+  const navigate = useNavigate();
+
 
   return (
     <div className="flex bg-gray-100 min-h-screen">
@@ -68,8 +73,8 @@ export default function MyLoans() {
                     {/* View Button - future detail page */}
                     <td className="px-4 py-3 text-right">
                       <button
-                        disabled
-                        className="px-4 py-2 rounded-md text-xs bg-gray-200 text-gray-500 cursor-not-allowed"
+                        onClick={() => navigate(`/loan/${loan.id}`)}
+                        className="px-4 py-2 bg-[#0A4D68] text-white text-sm font-medium rounded-md hover:bg-[#083D52] transition"
                       >
                         View
                       </button>
