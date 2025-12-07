@@ -32,7 +32,7 @@ function App() {
         <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/apply-loan" element={<ApplyLoan/>}/>
         <Route path="/products" element={<Products/>}/>
-        <Route path="/dashboard/emi-payments" element={<EmiPayments/>}/>
+        <Route path="/emi-payments" element={<EmiPayments/>}/>
         <Route path="/notification" element={<Notifications/>}/>
         <Route path="/profile-kyc" element={<ProfileKYC/>}/>
       </Routes>

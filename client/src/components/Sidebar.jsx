@@ -11,7 +11,7 @@ export default function Sidebar() {
     { icon: <Home size={20} />, label: "Dashboard", link: "/dashboard" },
     { icon: <Home size={20} />, label: "Apply Loan", link: "/apply-loan" },
     { icon: <CreditCard size={20} />, label: "My Loans", link: "/dashboard" },
-    { icon: <Wallet size={20} />, label: "EMI Payments", link: "/dashboard/emi-payments" }, 
+    { icon: <Wallet size={20} />, label: "EMI Payments", link: "/emi-payments" }, 
     { icon: <Bell size={20} />, label: "Notifications", link: "/notification" },
     { icon: <User size={20} />, label: "Profile & KYC", link: "/profile-kyc" },
   ];
