@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 export default function ApplyLoan() {
@@ -230,7 +231,7 @@ export default function ApplyLoan() {
                     ) : (
                         <button
                             className="px-8 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800"
-                            onClick={() => alert("Application Submitted Successfully!")}
+                            onClick={() => toast.success("Application submitted successfully! We'll review it within 24 hours.")}
                         >
                             Submit Application
                         </button>
