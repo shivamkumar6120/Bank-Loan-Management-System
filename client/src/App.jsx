@@ -11,11 +11,13 @@ import { LoanProvider } from "./context/LoanContext";
 import Products from "./pages/Products";
 import { EmiProvider } from "./context/EmiContext";
 import EmiPayments from './pages/EmiPayments';
+import { NotificationProvider } from "./context/NotificationContext";
 function App() {
   return (
     <div>
       <LoanProvider>
         <EmiProvider>
+          <NotificationProvider>
       <Routes>
         {/* Home Page as default landing page */}
         <Route path="/" element={<Home />} />
@@ -32,6 +34,7 @@ function App() {
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
+      </NotificationProvider>
       </EmiProvider>
       </LoanProvider>
     </div>
