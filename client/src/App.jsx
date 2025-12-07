@@ -18,6 +18,7 @@ import MyLoans from "./pages/MyLoans";
 import LoanDetails from "./pages/LoanDetails";
 import HelpSupport from "./pages/HelpSupport";
 import { SupportProvider } from "./context/SupportContext";
+import Logout from "./pages/Logout";
 function App() {
   return (
     <div>
@@ -43,6 +44,7 @@ function App() {
         <Route path="/my-loans" element={<MyLoans/>}/>
         <Route path="/loan/:loanId" element={<LoanDetails/>}/>
         <Route path="/support" element={<HelpSupport/>}/>
+        <Route path="/logout" element={<Logout/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
