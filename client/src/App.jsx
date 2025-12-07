@@ -16,12 +16,15 @@ import Notifications from "./pages/Notifications";
 import ProfileKYC from "./pages/ProfileKYC";
 import MyLoans from "./pages/MyLoans";
 import LoanDetails from "./pages/LoanDetails";
+import HelpSupport from "./pages/HelpSupport";
+import { SupportProvider } from "./context/SupportContext";
 function App() {
   return (
     <div>
       <LoanProvider>
         <EmiProvider>
           <NotificationProvider>
+            <SupportProvider>
       <Routes>
         {/* Home Page as default landing page */}
         <Route path="/" element={<Home />} />
@@ -39,9 +42,11 @@ function App() {
         <Route path="/profile-kyc" element={<ProfileKYC/>}/>
         <Route path="/my-loans" element={<MyLoans/>}/>
         <Route path="/loan/:loanId" element={<LoanDetails/>}/>
+        <Route path="/support" element={<HelpSupport/>}/>
       </Routes>
 
       <ToastContainer position="top-left" autoClose={3000}  />
+      </SupportProvider>
       </NotificationProvider>
       </EmiProvider>
       </LoanProvider>
