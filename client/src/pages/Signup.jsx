@@ -44,9 +44,9 @@ export const Signup = () => {
             toast.error("Please Enter Password")
         else if(user.confirmPassword == "")
             toast.error("Please Enter confirmPassword")
-        else if(password != confirmPassword)
+        else if(user.password != user.confirmPassword)
             toast.error("Password does not match")
-        else if(!isValidPassword(password))
+        else if(!isValidPassword(user.password))
             toast.error("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character")
         else{
             console.log(user)
