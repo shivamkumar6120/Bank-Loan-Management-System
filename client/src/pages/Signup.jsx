@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { FaBuilding } from 'react-icons/fa';
+import { FaBuilding, FaLock, FaUser } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const Signup = () => {
      const [user,setUser] = useState({
@@ -11,21 +13,46 @@ export const Signup = () => {
     });
     const navigate = useNavigate();
 
-    function nameHandler(e){
-        setUser((prevUser)=>({...prevUser,name:e.target.value}))
+    function isValidPassword(password) {
+      if (password.length < 8) return false;
+
+      let hasUpper = false;
+      let hasLower = false;
+      let hasDigit = false;
+      let hasSpecial = false;
+      const specialChars = "!@#$%^&*()-_=+[]{};:'\",.<>?/|`~";
+
+      for (let char of password) {
+        if (char >= 'A' && char <= 'Z') hasUpper = true;
+        else if (char >= 'a' && char <= 'z') hasLower = true;
+        else if (char >= '0' && char <= '9') hasDigit = true;
+        else if (specialChars.includes(char)) hasSpecial = true;
+      }
+
+      return hasUpper && hasLower && hasDigit && hasSpecial;
     }
-    function emailHandler(e){
-        setUser((prevUser)=>({...prevUser,email:e.target.value}))
-    }
-     function passwordHandler(e){
-        setUser((prevUser)=>({...prevUser,password:e.target.value}))
-    }
-    function confirmPasswordHandler(e){
-        setUser((prevUser)=>({...prevUser,confirmPassword:e.target.value}))
+   
+    function changeHandler(e){
+        setUser((prevUser)=>({...prevUser,[e.target.name]:e.target.value}))
     }
     async function signUpHandler(){
-        console.log(user)
-        navigate("/dashboard");
+        if(user.name == "")
+            toast.error("Please Enter name")
+        else if(user.email == "")
+            toast.error("Please Enter Email")
+        else if(user.password == "")
+            toast.error("Please Enter Password")
+        else if(user.confirmPassword == "")
+            toast.error("Please Enter confirmPassword")
+        else if(password != confirmPassword)
+            toast.error("Password does not match")
+        else if(!isValidPassword(password))
+            toast.error("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character")
+        else{
+            console.log(user)
+            navigate("/verify-email")
+        }
+        
     }
   return (
     <div className="min-h-screen flex">
@@ -63,26 +90,32 @@ export const Signup = () => {
              </p>
              <div className="mb-4">
                <label className="block text-sm font-medium text-gray-600 mb-1">
+               <FaUser style={{color:"grey",position:"absolute",top:"calc(49%)",left:"2.85%",fontSize:"20px"}}/>
                 Full Name
                </label>
                <input
+                required
+                name='name'
                  type="name"
                  placeholder="John Doe"
                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                 onChange={nameHandler}
+                 onChange={changeHandler}
                />
              </div>
    
              {/* Email */}
              <div className="mb-4">
                <label className="block text-sm font-medium text-gray-600 mb-1">
+                <SiGmail style={{color:"grey",position:"absolute",top:"calc(53%)",left:"1.85%",fontSize:"20px"}}/>
                  Email address
                </label>
                <input
+                required
+                name='email'
                  type="email"
                  placeholder="you@example.com"
                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                 onChange={emailHandler}
+                 onChange={changeHandler}
                />
              </div>
    
@@ -90,15 +123,18 @@ export const Signup = () => {
              <div className="mb-6">
                <div className="flex justify-between">
                  <label className="text-sm font-medium text-gray-600">
+                   <FaLock style={{color:"grey",position:"absolute",top:"calc(52%)",left:"4.85%",fontSize:"20px"}}/>
                    Password
                  </label>
                </div>
    
                <input
+                required
+                name='password'
                  type="password"
                  placeholder="••••••••"
                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                 onChange={passwordHandler}
+                 onChange={changeHandler}
                />
              </div>
 
@@ -106,15 +142,18 @@ export const Signup = () => {
              <div className="mb-6">
                <div className="flex justify-between">
                  <label className="text-sm font-medium text-gray-600">
+                  <FaLock style={{color:"grey",position:"absolute",top:"calc(52%)",left:"4.85%",fontSize:"20px"}}/>
                    Confirm Password
                  </label>
                </div>
    
                <input
+                required
+                name='confirmPassword'
                  type="password"
                  placeholder="••••••••"
                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                 onChange={confirmPasswordHandler}
+                 onChange={changeHandler}
                />
              </div>
    

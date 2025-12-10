@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBuilding } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -13,8 +14,15 @@ export const Login = () => {
     setUser((prevUser) => ({ ...prevUser, password: e.target.value }));
   }
   async function loginHandler() {
-    console.log(user);
-    navigate("/dashboard");
+    if(user.email=="")
+        toast.error("Please Enter Email")
+    else if(user.password=="")
+        toast.error("Please Enter Password")
+    else{
+        console.log(user);
+        navigate("/dashboard");
+    }
+    
   }
   return (
     <div className="min-h-screen flex">
